@@ -10,10 +10,8 @@ class TreeNode:
             print("Someone named \"{}\" is already listed ".format(child_node.value))
 
     def remove_child(self, child_node):
-        if child_node in self.children:
-            self.children = [i for i in self.children if not i == child_node]
-        else:
-            print("\"{}\" is not found! ".format(child_node.value))
+        self.children = [i for i in self.children if i.value != child_node]
+        
     
     def traverse(self):
         nodes = [self]
@@ -48,6 +46,19 @@ class TreeNode:
                 nodes += current_node.children
         
         return "{goal_value} not found in the tree".format(goal_value=goal_value)
+
+    def checker(self, child_node):
+        nodes = [self]
+        verif = False 
+
+        while len(nodes) > 0:
+            current_node = nodes.pop()
+            if current_node.value == child_node:
+                verif = True 
+            else:
+                nodes += current_node.children 
+        
+        return verif 
 
 # Test Inputs 
 
