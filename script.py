@@ -110,7 +110,10 @@ class Script:
                         for i in returned_path:
                             print(i.value)
                         print('-'*24)
-
+            else:
+                print('That command does not seem to be valid ')
+                time.sleep(0.1)
+                
 
                         
 
