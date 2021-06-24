@@ -26,9 +26,12 @@ class TreeNode:
 
             
             nodes += current_node.children
-            for i in current_node.children:
-                string_2 += ' ' + str(i.value)
-            print(string_1 + string_2)
+            if len(current_node.children) == 0:
+                continue
+            else:
+                for i in range(len(current_node.children)):
+                    string_2 += ' ' + str(current_node.children[i].value)
+                print(string_1 + string_2)
 
             num += 1
 
