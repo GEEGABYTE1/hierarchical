@@ -20,7 +20,7 @@ Just like any typical hierarchical tree, users will be able to use this software
     Otherwise, for other commands, writing the full name is necessary.
     `name = input('Type the name of the person you want to remove: ')`
 
-    Then again, if the program does not take in a name, try typing the first name and last name together.
+    Then again, if the program does not take in a name, try typing the first name and last name together. For the current version, the name must be typed *exactly* the same as the way it is listed in the tree.
 
      
 
