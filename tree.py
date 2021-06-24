@@ -30,10 +30,24 @@ class TreeNode:
                 continue
             else:
                 for i in range(len(current_node.children)):
-                    string_2 += ' ' + str(current_node.children[i].value)
+                    string_2 += ' --> ' + str(current_node.children[i].value)
                 print(string_1 + string_2)
 
             num += 1
+
+    def add_before(self, child_node, goal_value):
+        nodes = [self]
+        while len(nodes) > 0:
+            current_node = nodes.pop()
+            #print(current_node.value)
+            
+            if current_node.value == goal_value:
+                current_node.add_child(child_node)
+                return True
+            else:
+                nodes += current_node.children
+        
+        return "{goal_value} not found in the tree".format(goal_value=goal_value)
 
 # Test Inputs 
 
