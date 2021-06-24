@@ -60,6 +60,20 @@ class TreeNode:
         
         return verif 
 
+    def parent_finder(self, child_node):
+        nodes = [self]
+        parent_node = None 
+        while len(nodes) > 0:
+            current_node = nodes.pop()
+            for node in current_node.children:
+                if child_node == node.value:
+                    parent_node = current_node
+                    return parent_node 
+                else:
+                    nodes += current_node.children 
+            return False
+
+
 # Test Inputs 
 
 test1 = TreeNode(1)
