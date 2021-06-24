@@ -75,8 +75,11 @@ class Script:
                             print('...')
                             time.sleep(0.2)
 
+
+                        parent = database.parent_finder(name)
+
                         print()
-                        database.remove_child(name)
+                        parent.remove_child(name)
                         time.sleep(0.3)
                         print('{name} has been successfully removed '.format(name=name))
                         time.sleep(0.1)
