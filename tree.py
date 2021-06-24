@@ -20,10 +20,28 @@ class TreeNode:
         num = 0
         while len(nodes) > 0:
             current_node = nodes.pop()
+            
             string_1 = ' ' * num 
-            string_2 = '|'
-            print(string_1 + string2)
+            string_2 = '|' + str(current_node.value)
+
+            
             nodes += current_node.children
+            for i in current_node.children:
+                string_2 += ' ' + str(i.value)
+            print(string_1 + string_2)
+
             num += 1
 
+# Test Inputs 
+
+test1 = TreeNode(1)
+test2 = TreeNode(2)
+test3 = TreeNode(3)
+test4 = TreeNode(4)
+
+test1.add_child(test2)
+test2.add_child(test3)
+test2.add_child(test4)
+
+print(test1.traverse())
     
